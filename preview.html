@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodSocial Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8595D4;
+            --secondary: #88D8DC;
+            --background: #FAFAE3;
+            --accent: #F4D3A1;
+            --highlight: #F0849D;
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: var(--text-dark);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .devices-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .device {
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .device:hover {
+            transform: scale(1.02);
+        }
+
+        .device-frame {
+            width: 320px;
+            height: 650px;
+            background-color: #000;
+            padding: 15px;
+            position: relative;
+        }
+
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: var(--background);
+            position: relative;
+        }
+
+        .device-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background-color: #000;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .device-label {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .features {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--text-dark);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .devices-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>FoodSocial Mobile App Preview</h1>
+        <p class="description">
+            Connect, Cook, Share: Your Food Community. Preview the FoodSocial app on different devices below.
+        </p>
+    </div>
+
+    <div class="devices-container">
+        <div class="device">
+            <div class="device-frame">
+                <div class="device-notch"></div>
+                <div class="device-screen">
+                    <iframe src="index.html" title="FoodSocial on iPhone"></iframe>
+                </div>
+            </div>
+            <div class="device-label">iPhone</div>
+        </div>
+
+        <div class="device">
+            <div class="device-frame" style="border-radius: 30px;">
+                <div class="device-screen">
+                    <iframe src="index.html" title="FoodSocial on Android"></iframe>
+                </div>
+            </div>
+            <div class="device-label">Android</div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Social feed to share your food experiences</li>
+                <li>Recipe sharing with detailed instructions</li>
+                <li>Leftovers marketplace with credit system</li>
+                <li>Food-focused dating with dietary preference matching</li>
+                <li>Comprehensive user profiles</li>
+                <li>Mobile-optimized experience with screen transitions</li>
+                <li>Swipe functionality for dating profiles</li>
+            </ul>
+        </div>
+        
+        <div class="feature">
+            <h3>How to Use</h3>
+            <p>
+                Click on the devices above to interact with the FoodSocial app. Navigate through different sections using the bottom menu. 
+                Experience the dating section with swipe functionality and dietary preference matching. The app simulates separate screens with proper transitions for a professional mobile experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="index.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+        <a href="https://github.com/yourusername/foodsocial" target="_blank" class="btn btn-secondary">View Source</a>
+    </div>
+</body>
+</html> 

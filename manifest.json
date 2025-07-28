@@ -1,0 +1,17 @@
+{
+  "name": "FoodSocial",
+  "short_name": "FoodSocial",
+  "description": "Connect, Cook, Share: Your Food Community",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FAFAE3",
+  "theme_color": "#8595D4",
+  "icons": [
+    {
+      "src": "img/default-avatar.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ],
+  "orientation": "portrait"
+} 

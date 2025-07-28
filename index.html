@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FoodSocial</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8595D4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">9:41</div>
+            <div class="status-center notch"></div>
+            <div class="status-right">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- Global Search Bar -->
+        <div class="global-search-container">
+            <div class="global-search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="global-search-input" placeholder="Search posts, friends, groups...">
+                <button class="search-clear-btn" id="search-clear-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="search-results-container" class="search-results-container hidden">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Splash Screen -->
+        <div id="splash-screen" class="screen active">
+            <div class="splash-container">
+                <div class="splash-logo">FoodSocial</div>
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <!-- Auth Screen -->
+        <div id="auth-screen" class="screen">
+            <div class="auth-container">
+                <div class="logo">
+                    <h1>FoodSocial</h1>
+                    <p>Connect, Cook, Share: Your Food Community</p>
+                </div>
+                <div class="auth-options">
+                    <button id="join-now-btn" class="btn-highlight">Join Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <h2>Join FoodSocial</h2>
+                <div class="sso-options">
+                    <button class="sso-btn" data-provider="google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="sso-btn" data-provider="facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                    <button class="sso-btn" data-provider="apple">
+                        <i class="fab fa-apple"></i> Apple
+                    </button>
+                    <button class="sso-btn" data-provider="twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </button>
+                </div>
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                <button id="email-signup-btn" class="btn-secondary">Email Sign-Up</button>
+                <form id="email-signup-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password (min. 8 characters)</label>
+                        <input type="password" id="password" minlength="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="13" required>
+                    </div>
+                    <button type="submit" class="btn-secondary">Sign Up</button>
+                </form>
+                <button class="close-modal">&times;</button>
+            </div>
+        </div>
+
+        <!-- Main App Container -->
+        <div id="main-app" class="hidden">
+            <!-- Screens will be inserted here -->
+            
+            <!-- Home Feed Screen -->
+            <div id="home-screen" class="screen">
+                <div class="screen-header">
+                    <h2>Home Feed</h2>
+                    <div class="header-actions">
+                        <button class="icon-btn" aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="icon-btn" aria-label="Messages">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="post-composer">
+                    <div class="post-input" aria-label="What's cooking?">What's Cooking?</div>
+                </div>
+                <div class="feed-container"></div>
+            </div>
+
+            <!-- Recipes Screen -->
+            <div id="recipes-screen" class="screen">
+                <div class="screen-header">
+                    <h2>Recipes</h2>
+                    <div class="header-actions">
+                        <button class="create-recipe-btn btn-highlight">Create Recipe</button>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search recipes...">
+                    <button class="btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab">Vegetarian</button>
+                    <button class="filter-tab">Vegan</button>
+                    <button class="filter-tab">Gluten-Free</button>
+                </div>
+                <div class="recipe-grid"></div>
+            </div>
+
+            <!-- Recipe Detail Screen (Hidden initially) -->
+            <div id="recipe-detail-screen" class="screen">
+                <div class="screen-header">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    <h2>Recipe Detail</h2>
+                    <div class="header-actions">
+                        <button class="icon-btn" aria-label="Save recipe">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="recipe-detail-container"></div>
+            </div>
+
+            <!-- Leftovers Screen -->
+            <div id="leftovers-screen" class="screen">
+                <div class="screen-header">
+                    <h2>Leftovers</h2>
+                    <div class="header-actions">
+                        <button class="create-ad-btn btn-secondary">Create Ad</button>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search leftovers...">
+                    <button class="btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label>Distance:</label>
+                        <select>
+                            <option>1 km</option>
+                            <option selected>5 km</option>
+                            <option>10 km</option>
+                            <option>25 km</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Rating:</label>
+                        <select>
+                            <option>Any</option>
+                            <option>4+ stars</option>
+                            <option selected>3+ stars</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="leftovers-grid"></div>
+            </div>
+
+            <!-- Leftover Detail Screen (Hidden initially) -->
+            <div id="leftover-detail-screen" class="screen">
+                <div class="screen-header">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    <h2>Leftover Detail</h2>
+                </div>
+                <div class="leftover-detail-container"></div>
+            </div>
+
+            <!-- Dating Screen -->
+            <div id="dating-screen" class="screen">
+                <div class="screen-header">
+                    <h2>Food Dating</h2>
+                    <div class="header-actions">
+                        <button class="icon-btn" id="dating-preferences-btn" aria-label="Dating preferences">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="dating-swiper">
+                    <!-- Dating cards will be inserted here -->
+                </div>
+                <div class="dating-actions">
+                    <button class="dating-action-btn skip-btn" aria-label="Skip">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="dating-action-btn like-btn" aria-label="Like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dating Preferences Modal -->
+            <div id="dating-preferences-modal" class="modal">
+                <div class="modal-content">
+                    <h2>Dating Preferences</h2>
+                    <div class="form-group">
+                        <label>Age Range</label>
+                        <div class="range-slider">
+                            <input type="range" min="18" max="65" value="25" class="slider" id="min-age">
+                            <input type="range" min="18" max="65" value="40" class="slider" id="max-age">
+                            <div class="range-values">
+                                <span id="min-age-value">25</span> - <span id="max-age-value">40</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Distance (km)</label>
+                        <div class="range-slider">
+                            <input type="range" min="1" max="100" value="25" class="slider" id="distance">
+                            <div class="range-values">
+                                <span id="distance-value">25</span> km
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Dietary Preferences</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="vegetarian" checked> Vegetarian</label>
+                            <label><input type="checkbox" value="vegan"> Vegan</label>
+                            <label><input type="checkbox" value="gluten-free"> Gluten-Free</label>
+                            <label><input type="checkbox" value="pescatarian"> Pescatarian</label>
+                            <label><input type="checkbox" value="keto"> Keto</label>
+                            <label><input type="checkbox" value="paleo"> Paleo</label>
+                            <label><input type="checkbox" value="omnivore"> Omnivore</label>
+                            <label><input type="checkbox" value="carnivore"> Carnivore</label>
+                            <label><input type="checkbox" value="dairy-free"> Dairy-Free</label>
+                            <label><input type="checkbox" value="organic"> Organic</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Cuisine Preferences</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="italian" checked> Italian</label>
+                            <label><input type="checkbox" value="japanese" checked> Japanese</label>
+                            <label><input type="checkbox" value="thai" checked> Thai</label>
+                            <label><input type="checkbox" value="mexican"> Mexican</label>
+                            <label><input type="checkbox" value="indian"> Indian</label>
+                            <label><input type="checkbox" value="french"> French</label>
+                            <label><input type="checkbox" value="chinese"> Chinese</label>
+                            <label><input type="checkbox" value="korean"> Korean</label>
+                            <label><input type="checkbox" value="vietnamese"> Vietnamese</label>
+                            <label><input type="checkbox" value="spanish"> Spanish</label>
+                            <label><input type="checkbox" value="american"> American</label>
+                            <label><input type="checkbox" value="bbq"> BBQ</label>
+                            <label><input type="checkbox" value="german"> German</label>
+                            <label><input type="checkbox" value="greek"> Greek</label>
+                            <label><input type="checkbox" value="turkish"> Turkish</label>
+                            <label><input type="checkbox" value="middle eastern"> Middle Eastern</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Types</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="dinner" checked> Dinner</label>
+                            <label><input type="checkbox" value="coffee" checked> Coffee</label>
+                            <label><input type="checkbox" value="brunch" checked> Brunch</label>
+                            <label><input type="checkbox" value="cooking"> Cooking Together</label>
+                            <label><input type="checkbox" value="picnic"> Picnic</label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-secondary close-modal">Cancel</button>
+                        <button class="btn-highlight" id="save-preferences-btn">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Screen -->
+            <div id="profile-screen" class="screen">
+                <div class="screen-header">
+                    <h2>Profile</h2>
+                    <div class="header-actions">
+                        <button class="icon-btn" aria-label="Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <img src="img/default-avatar.svg" alt="Profile" class="avatar">
+                    </div>
+                    <h2 class="username">Your Name</h2>
+                    <p class="bio">Your bio will appear here...</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value">5</span>
+                            <span class="stat-label">Credits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Recipes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">8</span>
+                            <span class="stat-label">Friends</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-tabs">
+                    <button class="tab-btn active" data-tab="posts">Posts</button>
+                    <button class="tab-btn" data-tab="recipes">Recipes</button>
+                    <button class="tab-btn" data-tab="leftovers">Leftovers</button>
+                    <button class="tab-btn" data-tab="dating">Dating</button>
+                </div>
+                <div class="profile-content"></div>
+            </div>
+            
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <button class="nav-btn" data-screen="home-screen" aria-label="Home" data-translate="menu.home">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button class="nav-btn" data-screen="recipes-screen" aria-label="Recipes">
+                    <i class="fas fa-utensils"></i>
+                </button>
+                <button class="nav-btn" data-screen="leftovers-screen" aria-label="Leftovers marketplace">
+                    <i class="fas fa-drumstick-bite"></i>
+                </button>
+                <button class="nav-btn" data-screen="dating-screen" aria-label="Dating">
+                    <i class="fas fa-heart"></i>
+                </button>
+                <button class="nav-btn" data-screen="profile-screen" aria-label="Profile">
+                    <i class="fas fa-user"></i>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Register service worker for offline functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html> 

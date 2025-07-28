@@ -1,0 +1,488 @@
+// Mock data for FoodSocial app
+
+const mockData = {
+    // Users
+    users: [
+        {
+            id: 1,
+            name: "Jane Doe",
+            avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+            bio: "Food enthusiast and amateur chef. I love trying new recipes and sharing my cooking adventures!",
+            rating: 4.8,
+            type: "user"
+        },
+        {
+            id: 2,
+            name: "John Smith",
+            avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+            bio: "Professional chef with a passion for Italian cuisine. Always looking for new flavors to explore!",
+            rating: 4.9,
+            type: "user"
+        },
+        {
+            id: 3,
+            name: "Emily Chen",
+            avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+            bio: "Foodie and sustainability advocate. I believe in reducing food waste and eating locally.",
+            rating: 4.7,
+            type: "user"
+        },
+        {
+            id: 4,
+            name: "Michael Johnson",
+            avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+            bio: "Home baker specializing in sourdough bread. I love sharing my creations and tips!",
+            rating: 4.5,
+            type: "user"
+        },
+        {
+            id: 5,
+            name: "Sarah Wilson",
+            avatar: "https://randomuser.me/api/portraits/women/29.jpg",
+            bio: "Vegan chef exploring plant-based alternatives. Let's make the world healthier one dish at a time!",
+            rating: 4.6,
+            type: "user"
+        }
+    ],
+    
+    // Groups
+    groups: [
+        {
+            id: 1,
+            name: "Vegan Foodies",
+            avatar: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "A community for sharing vegan recipes, restaurant recommendations, and cooking tips.",
+            members: 1243,
+            type: "group"
+        },
+        {
+            id: 2,
+            name: "Sourdough Bakers",
+            avatar: "https://images.unsplash.com/photo-1585478259715-4d3f99f57309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            description: "For enthusiasts of sourdough bread baking. Share your starters, recipes, and troubleshooting tips.",
+            members: 876,
+            type: "group"
+        },
+        {
+            id: 3,
+            name: "Food Waste Reduction",
+            avatar: "https://images.unsplash.com/photo-1610348725531-843dff563e2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Tips and strategies for reducing food waste at home and in restaurants.",
+            members: 654,
+            type: "group"
+        },
+        {
+            id: 4,
+            name: "Italian Cuisine Lovers",
+            avatar: "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Everything about Italian food, from pasta to pizza to regional specialties.",
+            members: 1587,
+            type: "group"
+        },
+        {
+            id: 5,
+            name: "Home Cooking Club",
+            avatar: "https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Share your home cooking creations, recipes, and kitchen hacks.",
+            members: 2134,
+            type: "group"
+        }
+    ],
+    
+    // Business Pages
+    businessPages: [
+        {
+            id: 1,
+            name: "Green Leaf Cafe",
+            avatar: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Organic, locally-sourced vegetarian cafe with a focus on sustainability.",
+            rating: 4.7,
+            type: "business"
+        },
+        {
+            id: 2,
+            name: "Artisan Bakery",
+            avatar: "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+            description: "Handcrafted breads, pastries, and desserts made with traditional methods.",
+            rating: 4.9,
+            type: "business"
+        },
+        {
+            id: 3,
+            name: "Spice World Market",
+            avatar: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Specialty grocery store featuring spices, herbs, and ingredients from around the world.",
+            rating: 4.6,
+            type: "business"
+        },
+        {
+            id: 4,
+            name: "Farm Fresh Delivery",
+            avatar: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Weekly delivery service of fresh, seasonal produce from local farms.",
+            rating: 4.8,
+            type: "business"
+        },
+        {
+            id: 5,
+            name: "Culinary Workshop",
+            avatar: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Cooking classes, workshops, and team-building events for all skill levels.",
+            rating: 4.5,
+            type: "business"
+        }
+    ],
+    
+    // Posts
+    posts: [
+        {
+            id: 1,
+            userId: 2,
+            content: "Just made this amazing pasta carbonara! The secret is using fresh eggs and high-quality pecorino cheese. Who wants the recipe?",
+            image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            likes: 42,
+            comments: 8,
+            time: "2 hours ago",
+            type: "post"
+        },
+        {
+            id: 2,
+            userId: 3,
+            content: "Made too much lasagna for dinner! If anyone's in the downtown area, I'm happy to share. It's vegetarian and made with homemade tomato sauce. First come, first served!",
+            image: "https://images.unsplash.com/photo-1619895092538-128341789043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            likes: 28,
+            comments: 15,
+            time: "5 hours ago",
+            type: "post"
+        },
+        {
+            id: 3,
+            userId: 1,
+            content: "Tried a new recipe for sourdough bread today. The crust turned out perfect! Anyone else baking during lockdown?",
+            image: "https://images.unsplash.com/photo-1585478259715-4d3f99f57309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            likes: 35,
+            comments: 7,
+            time: "Yesterday",
+            type: "post"
+        },
+        {
+            id: 4,
+            userId: 5,
+            content: "Just discovered this amazing vegan cheese alternative! It melts perfectly and tastes just like the real thing. Game changer for my plant-based recipes!",
+            image: "https://images.unsplash.com/photo-1559561853-08451507cbe7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+            likes: 19,
+            comments: 4,
+            time: "2 days ago",
+            type: "post"
+        },
+        {
+            id: 5,
+            userId: 4,
+            content: "Farmers market haul! Fresh vegetables, artisanal bread, and local honey. Supporting local farmers feels good!",
+            image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            likes: 51,
+            comments: 6,
+            time: "3 days ago",
+            type: "post"
+        }
+    ],
+    
+    // Recipes
+    recipes: [
+        {
+            id: 1,
+            userId: 2,
+            title: "Classic Pasta Carbonara",
+            image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            rating: 4.8,
+            reviews: 156,
+            ingredients: [
+                "400g spaghetti",
+                "200g pancetta or guanciale, diced",
+                "4 large eggs",
+                "100g Pecorino Romano cheese, grated",
+                "50g Parmesan cheese, grated",
+                "Freshly ground black pepper",
+                "Salt"
+            ],
+            instructions: [
+                "Bring a large pot of salted water to boil and cook spaghetti according to package instructions until al dente.",
+                "While pasta is cooking, heat a large skillet over medium heat and cook the pancetta until crispy, about 5-7 minutes.",
+                "In a bowl, whisk together eggs, grated cheeses, and plenty of black pepper.",
+                "When pasta is done, reserve 1 cup of pasta water, then drain pasta and immediately add to the skillet with pancetta.",
+                "Remove skillet from heat and quickly pour in the egg and cheese mixture, stirring constantly to coat the pasta and create a creamy sauce. Add a splash of reserved pasta water if needed to loosen the sauce.",
+                "Serve immediately with extra grated cheese and black pepper on top."
+            ],
+            dietaryInfo: ["Contains dairy", "Contains eggs"]
+        },
+        {
+            id: 2,
+            userId: 5,
+            title: "Vegan Mushroom Risotto",
+            image: "https://images.unsplash.com/photo-1633352615955-f0c99e8b7e5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            rating: 4.7,
+            reviews: 89,
+            ingredients: [
+                "300g Arborio rice",
+                "500g mixed mushrooms (shiitake, portobello, button)",
+                "1 onion, finely chopped",
+                "3 cloves garlic, minced",
+                "150ml dry white wine (optional)",
+                "1L vegetable stock, kept warm",
+                "2 tbsp nutritional yeast",
+                "2 tbsp olive oil",
+                "Fresh thyme",
+                "Salt and pepper to taste"
+            ],
+            instructions: [
+                "Clean and slice mushrooms. In a large pan, sauté half the mushrooms with thyme until golden. Set aside.",
+                "In a heavy-bottomed pot, heat olive oil and sauté onion until translucent. Add garlic and cook for 1 minute.",
+                "Add remaining mushrooms and cook until they release their moisture.",
+                "Add rice and stir for 2 minutes until translucent around the edges.",
+                "Pour in wine if using and stir until absorbed.",
+                "Add hot stock one ladle at a time, stirring constantly and waiting until each addition is absorbed before adding more.",
+                "When rice is creamy and al dente (about 18-20 minutes), stir in nutritional yeast, reserved mushrooms, salt, and pepper.",
+                "Let rest for 2 minutes before serving."
+            ],
+            dietaryInfo: ["Vegan", "Dairy-free", "Gluten-free"]
+        },
+        {
+            id: 3,
+            userId: 3,
+            title: "Vegetarian Lasagna",
+            image: "https://images.unsplash.com/photo-1619895092538-128341789043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            rating: 4.9,
+            reviews: 124,
+            ingredients: [
+                "12 lasagna sheets",
+                "500g spinach",
+                "400g ricotta cheese",
+                "2 eggs",
+                "800g crushed tomatoes",
+                "2 onions, diced",
+                "3 cloves garlic, minced",
+                "300g mozzarella, grated",
+                "100g Parmesan cheese, grated",
+                "2 tbsp olive oil",
+                "2 tsp dried oregano",
+                "Fresh basil leaves",
+                "Salt and pepper to taste"
+            ],
+            instructions: [
+                "Preheat oven to 375°F (190°C).",
+                "Cook spinach until wilted, drain well, and mix with ricotta and eggs. Season with salt and pepper.",
+                "In a pan, sauté onions until soft, add garlic, then tomatoes and oregano. Simmer for 15 minutes.",
+                "In a baking dish, spread a thin layer of tomato sauce, then add a layer of lasagna sheets.",
+                "Add a layer of ricotta-spinach mixture, then mozzarella, then sauce. Repeat layers.",
+                "Top with final layer of pasta, sauce, mozzarella, and Parmesan.",
+                "Cover with foil and bake for 25 minutes. Remove foil and bake for another 15 minutes until golden.",
+                "Let rest for 10 minutes before serving. Garnish with fresh basil."
+            ],
+            dietaryInfo: ["Vegetarian", "Contains dairy", "Contains eggs"]
+        },
+        {
+            id: 4,
+            userId: 1,
+            title: "Artisan Sourdough Bread",
+            image: "https://images.unsplash.com/photo-1585478259715-4d3f99f57309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            rating: 4.6,
+            reviews: 78,
+            ingredients: [
+                "500g bread flour",
+                "350g water",
+                "100g active sourdough starter",
+                "10g salt"
+            ],
+            instructions: [
+                "Mix flour and water, let rest for 30 minutes (autolyse).",
+                "Add starter and salt, mix until incorporated.",
+                "Perform 4 sets of stretch and folds at 30-minute intervals.",
+                "Let dough rise until doubled (4-6 hours depending on temperature).",
+                "Shape dough and place in a floured banneton or bowl.",
+                "Refrigerate overnight (8-12 hours).",
+                "Preheat oven with Dutch oven inside to 475°F (245°C).",
+                "Score dough and bake covered for 30 minutes, then uncovered for 15-20 minutes.",
+                "Cool completely before slicing."
+            ],
+            dietaryInfo: ["Vegan", "Dairy-free"]
+        },
+        {
+            id: 5,
+            userId: 4,
+            title: "Gluten-Free Banana Bread",
+            image: "https://images.unsplash.com/photo-1605286978633-2dec93ff88a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            rating: 4.5,
+            reviews: 63,
+            ingredients: [
+                "3 ripe bananas, mashed",
+                "2 eggs",
+                "75g melted butter or coconut oil",
+                "50g brown sugar",
+                "1 tsp vanilla extract",
+                "200g gluten-free flour blend",
+                "1 tsp baking soda",
+                "1/2 tsp cinnamon",
+                "1/4 tsp salt",
+                "50g chopped walnuts (optional)"
+            ],
+            instructions: [
+                "Preheat oven to 350°F (175°C) and line a loaf pan with parchment paper.",
+                "In a bowl, mix mashed bananas, eggs, melted butter, sugar, and vanilla.",
+                "In another bowl, combine flour, baking soda, cinnamon, and salt.",
+                "Fold dry ingredients into wet ingredients until just combined.",
+                "Add walnuts if using.",
+                "Pour batter into prepared pan and bake for 50-55 minutes until a toothpick comes out clean.",
+                "Cool in pan for 10 minutes, then transfer to a wire rack to cool completely."
+            ],
+            dietaryInfo: ["Gluten-free", "Contains dairy", "Contains eggs"]
+        }
+    ],
+    
+    // Leftovers
+    leftovers: [
+        {
+            id: 1,
+            userId: 3,
+            title: "Homemade Vegetarian Lasagna",
+            image: "https://images.unsplash.com/photo-1619895092538-128341789043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Made too much lasagna for dinner! It's vegetarian with spinach and ricotta. About 4 servings left. Can be picked up today or tomorrow.",
+            distance: 1.2,
+            credits: 3,
+            time: "2 hours ago",
+            allergens: ["Dairy", "Gluten", "Eggs"],
+            freshness: "Made today"
+        },
+        {
+            id: 2,
+            userId: 2,
+            title: "Fresh Sourdough Bread",
+            image: "https://images.unsplash.com/photo-1585478259715-4d3f99f57309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            description: "Baked too many loaves of sourdough today! Two extra loaves available. Crusty outside, soft inside. Baked fresh this morning.",
+            distance: 2.5,
+            credits: 2,
+            time: "5 hours ago",
+            allergens: ["Gluten"],
+            freshness: "Baked today"
+        },
+        {
+            id: 3,
+            userId: 5,
+            title: "Vegan Chocolate Cake",
+            image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Half a vegan chocolate cake left from my birthday. Made with organic cocoa and sweetened with maple syrup. No animal products.",
+            distance: 3.7,
+            credits: 2,
+            time: "Yesterday",
+            allergens: ["Gluten", "Nuts"],
+            freshness: "Made yesterday"
+        },
+        {
+            id: 4,
+            userId: 1,
+            title: "Homemade Pizza",
+            image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Made extra pizza for dinner! One whole margherita pizza left. Homemade dough and sauce with fresh mozzarella.",
+            distance: 0.8,
+            credits: 3,
+            time: "3 hours ago",
+            allergens: ["Dairy", "Gluten"],
+            freshness: "Made today"
+        },
+        {
+            id: 5,
+            userId: 4,
+            title: "Butternut Squash Soup",
+            image: "https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            description: "Made a big batch of butternut squash soup! About 4 servings left. Vegan and gluten-free. Can be frozen.",
+            distance: 4.2,
+            credits: 2,
+            time: "Yesterday",
+            allergens: [],
+            freshness: "Made yesterday"
+        }
+    ],
+    
+    // Dating Profiles
+    datingProfiles: [
+        {
+            id: 1,
+            name: "Alex",
+            age: 28,
+            image: "https://randomuser.me/api/portraits/men/32.jpg",
+            bio: "Professional chef who loves creating Italian dishes. Looking for someone to share meals and cooking adventures with!",
+            distance: 3.2,
+            dietaryPreferences: ["omnivore", "italian"],
+            cuisinePreferences: ["italian", "french", "mediterranean"]
+        },
+        {
+            id: 2,
+            name: "Taylor",
+            age: 31,
+            image: "https://randomuser.me/api/portraits/women/44.jpg",
+            bio: "Vegetarian foodie who enjoys farmers markets and cooking with seasonal ingredients. Let's make dinner together!",
+            distance: 1.5,
+            dietaryPreferences: ["vegetarian", "pescatarian"],
+            cuisinePreferences: ["thai", "indian", "mediterranean"]
+        },
+        {
+            id: 3,
+            name: "Jordan",
+            age: 26,
+            image: "https://randomuser.me/api/portraits/men/22.jpg",
+            bio: "Vegan baker with a sweet tooth. I make the best plant-based desserts you'll ever try!",
+            distance: 4.7,
+            dietaryPreferences: ["vegan", "gluten-free"],
+            cuisinePreferences: ["japanese", "korean", "vietnamese"]
+        },
+        {
+            id: 4,
+            name: "Morgan",
+            age: 29,
+            image: "https://randomuser.me/api/portraits/women/29.jpg",
+            bio: "Passionate about sustainable eating and zero-waste cooking. Looking for someone who appreciates farm-to-table dining.",
+            distance: 2.8,
+            dietaryPreferences: ["vegetarian", "organic"],
+            cuisinePreferences: ["mexican", "spanish", "american"]
+        },
+        {
+            id: 5,
+            name: "Casey",
+            age: 33,
+            image: "https://randomuser.me/api/portraits/men/42.jpg",
+            bio: "Home brewer and BBQ enthusiast. I smoke my own meats and make craft beer. Looking for someone to share good food and drinks with!",
+            distance: 5.1,
+            dietaryPreferences: ["omnivore", "carnivore"],
+            cuisinePreferences: ["american", "bbq", "german"]
+        },
+        {
+            id: 6,
+            name: "Riley",
+            age: 27,
+            image: "https://randomuser.me/api/portraits/women/65.jpg",
+            bio: "Keto diet follower who loves experimenting with low-carb recipes. Coffee addict and fitness enthusiast.",
+            distance: 3.9,
+            dietaryPreferences: ["keto", "paleo"],
+            cuisinePreferences: ["greek", "turkish", "middle eastern"]
+        },
+        {
+            id: 7,
+            name: "Jamie",
+            age: 30,
+            image: "https://randomuser.me/api/portraits/men/55.jpg",
+            bio: "Sushi lover and amateur Japanese chef. I can make a mean ramen and perfect sushi rice!",
+            distance: 2.3,
+            dietaryPreferences: ["pescatarian", "japanese"],
+            cuisinePreferences: ["japanese", "chinese", "korean"]
+        },
+        {
+            id: 8,
+            name: "Avery",
+            age: 25,
+            image: "https://randomuser.me/api/portraits/women/74.jpg",
+            bio: "Gluten-free baker and pasta maker. I've perfected gluten-free pizza dough after years of trial and error!",
+            distance: 4.5,
+            dietaryPreferences: ["gluten-free", "dairy-free"],
+            cuisinePreferences: ["italian", "french", "american"]
+        }
+    ]
+}; 
