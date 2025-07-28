@@ -191,7 +191,7 @@ const mockData = {
             id: 1,
             userId: 2,
             title: "ต้มยำกุ้ง",
-            image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            image: "https://hot-thai-kitchen.com/wp-content/uploads/2013/03/tom-yum-goong-blog.jpg",
             rating: 4.8,
             reviews: 156,
             ingredients: [
@@ -218,7 +218,7 @@ const mockData = {
             id: 2,
             userId: 5,
             title: "ผัดไทยมังสวิรัติ",
-            image: "https://images.unsplash.com/photo-1633352615955-f0c99e8b7e5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            image: "https://i.ytimg.com/vi/96l1fPIxfb0/sddefault.jpg",
             rating: 4.7,
             reviews: 89,
             ingredients: [
@@ -246,7 +246,7 @@ const mockData = {
             id: 3,
             userId: 3,
             title: "แกงเขียวหวานผัก",
-            image: "https://images.unsplash.com/photo-1619895092538-128341789043?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            image: "https://img.kapook.com/u/2015/surauch/cook3/green-curry2.jpg",
             rating: 4.9,
             reviews: 124,
             ingredients: [
@@ -273,7 +273,7 @@ const mockData = {
             id: 4,
             userId: 1,
             title: "ขนมปังเปรี้ยวสูตรไทย",
-            image: "https://images.unsplash.com/photo-1585478259715-4d3f99f57309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnr5o0GSDLKZp-zYV5YdmwzrZdm9eXroe4Iw&s",
             rating: 4.6,
             reviews: 78,
             ingredients: [
@@ -298,7 +298,7 @@ const mockData = {
             id: 5,
             userId: 4,
             title: "ขนมกล้วยไร้กลูเตน",
-            image: "https://images.unsplash.com/photo-1605286978633-2dec93ff88a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            image: "https://img.wongnai.com/p/1920x0/2023/06/15/7cba1b575f764f89a590f88d8f9e0ee4.jpg",
             rating: 4.5,
             reviews: 63,
             ingredients: [
