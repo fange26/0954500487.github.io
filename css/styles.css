@@ -1355,3 +1355,16 @@ a:focus {
     overflow-x: hidden;
     transition: transform 0.3s ease-in-out;
 }
+
+body {
+  font-family: 'Noto Serif Thai', sans-serif;
+}
+
+[lang="th"] {
+  font-family: 'Noto Serif Thai', sans-serif;
+}
+
+.thai-heading {
+  font-family: 'Noto Serif Thai';
+  font-weight: 700;
+}
